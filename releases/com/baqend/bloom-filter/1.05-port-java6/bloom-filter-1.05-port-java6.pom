@@ -5,4 +5,5 @@
   <groupId>com.baqend</groupId>
   <artifactId>bloom-filter</artifactId>
   <version>1.05-port-java6</version>
+  <description>POM was created from install:install-file</description>
 </project>

@@ -5,4 +5,5 @@
   <groupId>net.kuhna</groupId>
   <artifactId>kuhna</artifactId>
   <version>1.0.0-vp1</version>
+  <description>POM was created from install:install-file</description>
 </project>

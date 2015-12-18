@@ -5,5 +5,5 @@
   <groupId>com.edb</groupId>
   <artifactId>edb-jdbc</artifactId>
   <version>9.2</version>
-  <description>POM was created by Sonatype Nexus</description>
+  <description>POM was created from install:install-file</description>
 </project>
