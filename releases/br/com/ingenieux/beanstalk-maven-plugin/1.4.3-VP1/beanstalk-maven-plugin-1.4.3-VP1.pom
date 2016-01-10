@@ -5,4 +5,5 @@
   <groupId>br.com.ingenieux</groupId>
   <artifactId>beanstalk-maven-plugin</artifactId>
   <version>1.4.3-VP1</version>
+  <packaging>maven-plugin</packaging>
 </project>
