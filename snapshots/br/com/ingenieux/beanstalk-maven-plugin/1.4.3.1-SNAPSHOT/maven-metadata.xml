@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>br.com.ingenieux</groupId>
+  <artifactId>beanstalk-maven-plugin</artifactId>
+  <version>1.4.3.1-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20160110.104001</timestamp>
+      <buildNumber>1</buildNumber>
+    </snapshot>
+    <lastUpdated>20160110104001</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>1.4.3.1-20160110.104001-1</value>
+        <updated>20160110104001</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>1.4.3.1-20160110.104001-1</value>
+        <updated>20160110104001</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>
