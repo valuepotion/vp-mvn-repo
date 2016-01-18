@@ -59,5 +59,6 @@ mvn deploy:deploy-file -DgroupId=<group-id> \
 
 ## Reference
 
-[1] http://cemerick.com/2010/08/24/hosting-maven-repos-on-github/
+[1] http://cemerick.com/2010/08/24/hosting-maven-repos-on-github
+
 [2] http://stackoverflow.com/questions/14013644/hosting-a-maven-repository-on-github
