@@ -46,7 +46,7 @@ If you have a only dependency library file, follow the below steps
 
 2. Run the below command to deploy dependency library file to `vp-mvn-repo` local git repository.
 ```
-mvn deploy:deploy-file -DgroupId=<group-id> \
+mvn install:install-file -DgroupId=<group-id> \
   -DartifactId=<artifact-id> \
   -Dversion=<version> \
   -Dpackaging=<type-of-packaging> \
