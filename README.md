@@ -12,7 +12,7 @@ public에 공개된 http 주소로 접근 할 수 있게 만든다.
 
 # download하는 쪽에서
 
-여기에 있는 jar 파일을 download하는 쪽 pom.xml에는 이렇게 <repository>태그를 추가한다.
+여기있는 jar 파일을 download 해서 쓰려면 <repository> 태그를 추가한다.
 
 ```
     <repositories>
@@ -31,9 +31,11 @@ public에 공개된 http 주소로 접근 할 수 있게 만든다.
 
 ## deploy 할 때 1
 
+여기에 jar 파일을 deploy 하려면
 deploy를 실행할 컴퓨터에 vp-mvn-repo를 checkout 받아두고 
-valuepotion/ua-parser를 deploy한다고 하면 
-mvn deploy 하면서 altDeploymentRepository 옵션을 준다.
+valuepotion/ua-parser를 mvn deploy를 실행한다.
+
+mvn deploy 하면서 vp-mvn-repo 디렉토리에 jar파일을 적도록 altDeploymentRepository 주고 실행한다.
 
 ```
 cd $HOME/p
