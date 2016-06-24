@@ -1,18 +1,10 @@
-# vp-mvn-repo
+# Valuepotion Maven Repository
 
-checkout 하고 mvn package 하면 error없이 돌아가는 환경이 조금 더 가까워지도록 여기에 jar파일을 올려보자.
+Hosting a maven repository on github for Valuepotion.
 
-이 글을 참조한다.
+## 1. Add maven repository
 
-  http://cemerick.com/2010/08/24/hosting-maven-repos-on-github
-
-간단히(무식하고 용감하고 틀리게) 요약하면 github에 repository를 만든다. 한데 layout은 maven2 repostory 처럼만들어서 
-public에 공개된 http 주소로 접근 할 수 있게 만든다.
-
-
-# download하는 쪽에서
-
-여기있는 jar 파일을 download 해서 쓰려면 <repository> 태그를 추가한다.
+If you want to use dependency libraries where `vp-mvn-repo`, copy and paste the snippet below into your build.
 
 ```
     <repositories>
@@ -27,39 +19,39 @@ public에 공개된 http 주소로 접근 할 수 있게 만든다.
     </repositories>
 ```
 
-# deploy 할 때
+## 2. Deploy dependency library in its project
 
-## deploy 할 때 1
+In order to deploy dependency library you made, copy and paste the snippet below into your build and run `mvn deploy`
 
-여기에 jar 파일을 deploy 하려면
-deploy를 실행할 컴퓨터에 vp-mvn-repo를 checkout 받아두고 
-valuepotion/ua-parser를 mvn deploy를 실행한다.
-
-mvn deploy 하면서 vp-mvn-repo 디렉토리에 jar파일을 적도록 altDeploymentRepository 주고 실행한다.
 
 ```
-cd $HOME/p
-git clone https://github.com/valuepotion/vp-mvn-repo 
-git clone https://github.com/valuepotion/ua-parser
-cd ua-parser/java
-mvn -DaltDeploymentRepository=repo::default::file:$HOME/p/vp-mvn-repo/snapshots deploy
-
-cd $HOME/p/vp-mvn-repo
-git add . 
-git commit -m "some new package"
-git push
+    <distributionManagement>
+        <repository>
+            <id>vp-release-repo</id>
+            <url>https://github.com/valuepotion/vp-mvn-repo/raw/master/releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>vp-snapshot-repo</id>
+            <url>https://github.com/valuepotion/vp-mvn-repo/raw/master/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
 ```
 
-2016/03/07일에 이렇게 해서 하나 올렸다.
 
-
-## deploy 할 때 2
+## 3. Deploy dependency library with the file
 
 If you have a only dependency library file, follow the below steps
 
 1. Clone the `vp-mvn-repo` git repo into your local directory.
 
 2. Run the below command to deploy dependency library file to `vp-mvn-repo` local git repository.
+
+```
+mvn -DaltDeploymentRepository=repo::default::file:{your-local-git-path}/vp-mvn-repo/releases deploy
+```
+
+or
+
 ```
 mvn install:install-file -DgroupId=<group-id> \
   -DartifactId=<artifact-id> \
@@ -72,3 +64,8 @@ mvn install:install-file -DgroupId=<group-id> \
 3. Commit to the `vp-mvn-repo` local git repository and push to remote.
 
 
+## Reference
+
+[1] http://cemerick.com/2010/08/24/hosting-maven-repos-on-github
+
+[2] http://stackoverflow.com/questions/14013644/hosting-a-maven-repository-on-github
